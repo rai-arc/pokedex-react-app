@@ -1,14 +1,17 @@
 import "./App.css";
-import GetEntry from "./GetEntry";
-import GetAllEntries from "./GetAllEntries";
-import GetRandomEntry from "./GetRandomEntry";
+import React, {useState} from "react";
+import LoadData from "./LoadData";
+import DisplayData from "./DisplayData";
+
 
 function App() {
-  return (<>
-  <GetRandomEntry />
-  <GetEntry />
-  <GetAllEntries />
-  </>)
+  const [pokemon, setPokemon] = useState([]);
+  const [display, setDisplay] = useState(false);
+  return <>
+  <LoadData pokemon = {pokemon} setPokemon = {setPokemon} setDisplay = {setDisplay}/>
+  <DisplayData pokemon = {pokemon} display={display}/>
+  </>
+  
 }
 
 export default App;
